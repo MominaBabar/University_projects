@@ -1,0 +1,514 @@
+--------------------------------------------------------
+--  File created - Saturday-December-15-2018   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table ADMIN_DEPARTMENT
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."ADMIN_DEPARTMENT" 
+   (	"STAFF_ID" NUMBER(5,0), 
+	"ROLES" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ALERT
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."ALERT" 
+   (	"ALERT_ID" NUMBER(5,0), 
+	"STATION_ID" NUMBER(5,0), 
+	"TYPE" VARCHAR2(20 BYTE), 
+	"ANNOUNCEMENT_DATE" DATE, 
+	"MESSAGE" VARCHAR2(100 BYTE), 
+	"DEADLINE" DATE
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table CLASS
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."CLASS" 
+   (	"CLASS_ID" NUMBER(5,0), 
+	"PRICE" NUMBER, 
+	"TYPE" VARCHAR2(20 BYTE), 
+	"CLASS_NAME" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table DEPARTMENT_NAMES
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."DEPARTMENT_NAMES" 
+   (	"DEPARTMENT_ID" NUMBER(5,0), 
+	"DEPARTMENT_NAME" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table DEPENDENTS
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."DEPENDENTS" 
+   (	"DSTAFF_ID" NUMBER(20,0), 
+	"RELATION" VARCHAR2(20 BYTE), 
+	"NAME" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ENGINE
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."ENGINE" 
+   (	"ENGINE_ID" NUMBER(5,0), 
+	"ETRAIN_ID" VARCHAR2(5 BYTE), 
+	"COMPANY_NAME" VARCHAR2(20 BYTE), 
+	"HORSEPOWER" NUMBER(*,0), 
+	"HEAD_ENGINEER_ID" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ENGINEEERING_DEPT
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."ENGINEEERING_DEPT" 
+   (	"STAFF_ID" NUMBER(5,0), 
+	"NO_OF_PROJECTS" NUMBER, 
+	"YEARS_OF_EXPERIENCE" NUMBER
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table FINANCIAL_REPORT
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."FINANCIAL_REPORT" 
+   (	"DEPARTMENT_ID" NUMBER(5,0), 
+	"SALARIES" FLOAT(100), 
+	"PENSIONS" FLOAT(10), 
+	"SAVINGS" FLOAT(10), 
+	"OTHERS" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table DEALS
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."DEALS" 
+   (	"DEAL_ID" NUMBER(20,0), 
+	"TIME_LIMIT" TIMESTAMP (6), 
+	"DISCOUNT" FLOAT(10), 
+	"DISCOUNT_TYPE" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table FOLLOWS
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."FOLLOWS" 
+   (	"TRAIN_ID" NUMBER(5,0), 
+	"SCHEDULE_ID" NUMBER(5,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table FREIGHT
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."FREIGHT" 
+   (	"FTRAIN_ID" NUMBER(5,0), 
+	"TYPE" VARCHAR2(20 BYTE), 
+	"LIMIT" FLOAT(100), 
+	"WEIGHT" FLOAT(20), 
+	"SUPPLIER_ID" NUMBER(5,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table FRIEGHT_TRAIN
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."FRIEGHT_TRAIN" 
+   (	"CAPACITY" NUMBER, 
+	"TRAIN_ID" NUMBER(5,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table JOB
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."JOB" 
+   (	"JOB_DESIGNATION" VARCHAR2(10 BYTE), 
+	"MAX_SALARY" FLOAT(10), 
+	"JOB_ID" NUMBER(5,0), 
+	"GRADE" VARCHAR2(10 BYTE), 
+	"MIN_SALARY" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table JOB_HISTORY
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."JOB_HISTORY" 
+   (	"STAFF_ID" NUMBER(6,0), 
+	"START_DATE" DATE, 
+	"END_DATE" DATE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS NOLOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "EXAMPLE" ;
+--------------------------------------------------------
+--  DDL for Table LOCATION
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."LOCATION" 
+   (	"LOCATION_ID" NUMBER(20,0), 
+	"CITY_NAME" VARCHAR2(20 BYTE), 
+	"PREV_STATION_ID" NUMBER(5,0), 
+	"NEXT_STATION_ID" NUMBER(5,0), 
+	"PROVINCE" VARCHAR2(10 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table LUGGUAGE
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."LUGGUAGE" 
+   (	"LPASSENGER_ID" NUMBER(5,0), 
+	"NO_OF_BAGS" NUMBER(5,0), 
+	"WEIGHT" NUMBER(*,0), 
+	"FEE" FLOAT(126)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MAINTENANCE_DEPT
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."MAINTENANCE_DEPT" 
+   (	"EFFICIENCY" VARCHAR2(20 BYTE), 
+	"STAFF_ID" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table INVENTORY
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."INVENTORY" 
+   (	"INVENTORY_ID" NUMBER(5,0), 
+	"SUPPLIER" VARCHAR2(20 BYTE), 
+	"AMOUNT" FLOAT(20), 
+	"ITEMS" VARCHAR2(20 BYTE), 
+	"QUALITY" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PASSENGER
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."PASSENGER" 
+   (	"PASSENGER_ID" NUMBER(5,0), 
+	"RESERVATION_STATUS" VARCHAR2(5 BYTE), 
+	"CNIC" NUMBER(15,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PAYMENT
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."PAYMENT" 
+   (	"PSTAFF_ID" NUMBER(10,0), 
+	"JOB_DESCRIPTION" VARCHAR2(15 BYTE), 
+	"PAY" FLOAT(10), 
+	"INCREMENT_BONUS" FLOAT(10)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PERSON
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."PERSON" 
+   (	"FIRST_NAME" VARCHAR2(20 BYTE), 
+	"LAST_NAME" VARCHAR2(20 BYTE), 
+	"AGE" NUMBER, 
+	"GENDER" VARCHAR2(20 BYTE), 
+	"PHONE_NO" NUMBER, 
+	"CNIC" NUMBER(15,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PERFORMS
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."PERFORMS" 
+   (	"STAFF_ID" NUMBER(5,0), 
+	"JOB_ID" NUMBER(5,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table SCHEDULE
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."SCHEDULE" 
+   (	"SCHEDULE_ID" NUMBER(5,0), 
+	"SROUTE_ID" VARCHAR2(50 BYTE), 
+	"TIME_DEPARTURE" TIMESTAMP (6), 
+	"TIME_ARRIVAL" TIMESTAMP (6), 
+	"STATION_BREAKS" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table SEAT
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."SEAT" 
+   (	"SEAT_NO" NUMBER(10,0), 
+	"TRAIN_NO" NUMBER(10,0), 
+	"CLASS_ID" VARCHAR2(10 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table SHOPS
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."SHOPS" 
+   (	"SHOP_ID" NUMBER(5,0), 
+	"TYPE" VARCHAR2(20 BYTE), 
+	"SHOP_NAME" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table STATION
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."STATION" 
+   (	"STATION_ID" NUMBER(5,0), 
+	"LOCATION_ID" NUMBER(5,0), 
+	"STATION_TYPE" VARCHAR2(15 BYTE), 
+	"STATION_HEAD_ID" NUMBER(5,0), 
+	"SALERTS_ID" NUMBER(5,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table STATION_DEPARTMENTS
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."STATION_DEPARTMENTS" 
+   (	"DEPARTMENT_ID" NUMBER(5,0), 
+	"STATION_ID" NUMBER(5,0), 
+	"SUPERVISOR_ID" NUMBER(5,0), 
+	"DEPUTY_SUPERVISOR_ID" NUMBER(5,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ROUTES
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."ROUTES" 
+   (	"ROUTE_NAME" VARCHAR2(20 BYTE), 
+	"ROUTE_ID" NUMBER(20,0), 
+	"STARTING_STATION_ID" NUMBER(5,0), 
+	"ENDING_STATION_ID" VARCHAR2(5 BYTE), 
+	"STOPS_ID" NUMBER(5,0), 
+	"ROUTE_LENGTH" FLOAT(100)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PASSENGER_TRAIN
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."PASSENGER_TRAIN" 
+   (	"NO_OF_SEATS" NUMBER, 
+	"NO_OF_CABINS" NUMBER, 
+	"TRAIN_ID" NUMBER(5,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table STOPS_AT
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."STOPS_AT" 
+   (	"STATION_ID" NUMBER(5,0), 
+	"ROUTES_ID" NUMBER(5,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TICKET
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."TICKET" 
+   (	"TICKET_ID" NUMBER(5,0), 
+	"TTRAIN_ID" NUMBER(5,0), 
+	"TSEAT_NO" NUMBER(10,0), 
+	"TPICK_UP_STATION_ID" NUMBER(5,0), 
+	"TDES_STATION_ID" NUMBER(5,0), 
+	"TDEAL_ID" NUMBER(5,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table STATION_SHOP
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."STATION_SHOP" 
+   (	"SHOP_ID" NUMBER(5,0), 
+	"STATION_ID" NUMBER(5,0), 
+	"CLOSING_TIMING" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table STAFF
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."STAFF" 
+   (	"STAFF_ID" NUMBER(5,0), 
+	"SSTATION_ID" NUMBER(5,0), 
+	"SDEPARTMENT_ID" NUMBER(5,0), 
+	"JOB_HISTORY" VARCHAR2(20 BYTE), 
+	"PAYMENT" FLOAT(10), 
+	"JOB_ID" NUMBER(10,0), 
+	"EMAIL_ADDRESS" VARCHAR2(20 BYTE), 
+	"STATUS" VARCHAR2(20 BYTE), 
+	"CNIC" NUMBER(15,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table SUPPLIER
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."SUPPLIER" 
+   (	"SUPPLIER_ID" NUMBER(5,0), 
+	"CNIC" VARCHAR2(20 BYTE), 
+	"COMNPANY_NAME" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TRAINORDERS
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."TRAINORDERS" 
+   (	"ORDER_ID" NUMBER(5,0), 
+	"ITEM_TYPE_SIMPLE" VARCHAR2(20 BYTE), 
+	"DESCRIPTION" VARCHAR2(20 BYTE), 
+	"TIME_OF_ORDER" TIMESTAMP (6), 
+	"DELIVERY_DATE" VARCHAR2(20 BYTE), 
+	"PRIORITY" VARCHAR2(20 BYTE), 
+	"SUPERVISOR_ID" NUMBER(20,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TRAIN
+--------------------------------------------------------
+
+  CREATE TABLE "RMS"."TRAIN" 
+   (	"TRAIN_ID" NUMBER(5,0) DEFAULT 00001, 
+	"TYPE" VARCHAR2(20 BYTE), 
+	"YEAR_OF_MODEL" NUMBER(5,0), 
+	"TSCHEDULE_ID" NUMBER(5,0), 
+	"TDRIVER_ID" VARCHAR2(5 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+ 
+
+   COMMENT ON COLUMN "RMS"."TRAIN"."TRAIN_ID" IS 'train no.';
+REM INSERTING into RMS.ADMIN_DEPARTMENT
+SET DEFINE OFF;
+REM INSERTING into RMS.ALERT
+SET DEFINE OFF;
+REM INSERTING into RMS.CLASS
+SET DEFINE OFF;
+REM INSERTING into RMS.DEPARTMENT_NAMES
+SET DEFINE OFF;
+REM INSERTING into RMS.DEPENDENTS
+SET DEFINE OFF;
+REM INSERTING into RMS.ENGINE
+SET DEFINE OFF;
+REM INSERTING into RMS.ENGINEEERING_DEPT
+SET DEFINE OFF;
+REM INSERTING into RMS.FINANCIAL_REPORT
+SET DEFINE OFF;
+REM INSERTING into RMS.DEALS
+SET DEFINE OFF;
+REM INSERTING into RMS.FOLLOWS
+SET DEFINE OFF;
+REM INSERTING into RMS.FREIGHT
+SET DEFINE OFF;
+REM INSERTING into RMS.FRIEGHT_TRAIN
+SET DEFINE OFF;
+REM INSERTING into RMS.JOB
+SET DEFINE OFF;
+REM INSERTING into RMS.JOB_HISTORY
+SET DEFINE OFF;
+REM INSERTING into RMS.LOCATION
+SET DEFINE OFF;
+REM INSERTING into RMS.LUGGUAGE
+SET DEFINE OFF;
+REM INSERTING into RMS.MAINTENANCE_DEPT
+SET DEFINE OFF;
+REM INSERTING into RMS.INVENTORY
+SET DEFINE OFF;
+REM INSERTING into RMS.PASSENGER
+SET DEFINE OFF;
+REM INSERTING into RMS.PAYMENT
+SET DEFINE OFF;
+REM INSERTING into RMS.PERSON
+SET DEFINE OFF;
+REM INSERTING into RMS.PERFORMS
+SET DEFINE OFF;
+REM INSERTING into RMS.SCHEDULE
+SET DEFINE OFF;
+REM INSERTING into RMS.SEAT
+SET DEFINE OFF;
+REM INSERTING into RMS.SHOPS
+SET DEFINE OFF;
+REM INSERTING into RMS.STATION
+SET DEFINE OFF;
+REM INSERTING into RMS.STATION_DEPARTMENTS
+SET DEFINE OFF;
+REM INSERTING into RMS.ROUTES
+SET DEFINE OFF;
+REM INSERTING into RMS.PASSENGER_TRAIN
+SET DEFINE OFF;
+REM INSERTING into RMS.STOPS_AT
+SET DEFINE OFF;
+REM INSERTING into RMS.TICKET
+SET DEFINE OFF;
+REM INSERTING into RMS.STATION_SHOP
+SET DEFINE OFF;
+REM INSERTING into RMS.STAFF
+SET DEFINE OFF;
+REM INSERTING into RMS.SUPPLIER
+SET DEFINE OFF;
+REM INSERTING into RMS.TRAINORDERS
+SET DEFINE OFF;
+REM INSERTING into RMS.TRAIN
+SET DEFINE OFF;
